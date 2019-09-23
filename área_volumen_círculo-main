@@ -1,0 +1,32 @@
+/*
+Realice dos funciones, una para calcular el área y otra para el volumen de una esfera, 
+invóquelas, asigne valores y muestre por pantalla, Use objeto y modularidad. (20 min).
+*/
+package area;
+
+import javax.swing.JOptionPane;
+
+public class Area {
+
+    obj a;
+    
+    public static void main(String[] args) {
+        
+        Area ar = new Area();
+        ar.imp();
+    }
+    public void imp(){
+     
+        JOptionPane.showMessageDialog(null, "Calcular área y volumen de una esfera");
+        
+        a = new obj();
+        
+        a.calcularArea();
+        
+        a.calcularVolumen();
+        
+        JOptionPane.showMessageDialog(null, "área: " + a.aEsf + '\n' + "volumen: " + a.vEsf);
+    }
+    
+
+}
