@@ -1,0 +1,8 @@
+package temperatura;
+
+public interface Itemp {
+    
+    public void temperatura();
+    public void temperatura2();
+    
+}
