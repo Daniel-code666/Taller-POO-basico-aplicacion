@@ -1,0 +1,34 @@
+/*
+Se requiere administrar los tiquetes en una compañía de transportes, 
+cada tiquete tiene las características de número de viaje, fecha, hora, nombre del pasajero y costo, 
+inicialmente realice el programa para tres tiquetes. 
+asigne los valores y calcule el costo total de los tiquetes vendidos por pantalla.
+Use objetos, modularidad, encapsulamiento. (20 min)
+*/
+package tiquetes;
+
+import javax.swing.JOptionPane;
+
+public class tiquete {
+
+    obj t;
+    
+    public static void main(String[] args) {
+        
+        tiquete ti = new tiquete();
+        ti.imp();
+    }
+    
+    public void imp(){
+        
+        JOptionPane.showMessageDialog(null, "Bienvenido a Avianca");
+        
+        t = new obj();
+        
+        t.reg();
+        
+        t.total();
+        
+        JOptionPane.showMessageDialog(null, "Costo total: " + t.costoT);
+    }
+}
