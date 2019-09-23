@@ -1,0 +1,61 @@
+package animales;
+
+import javax.swing.JOptionPane;
+
+public class EjecutarAnimales {
+    
+    public EjecutarAnimales(){}
+    
+    
+    public static void main(String[] args)
+    {
+        
+        EjecutarAnimales a1 = new EjecutarAnimales();
+        
+        a1.menu();
+        
+    }
+    
+    public void menu(){
+        
+        int opcion;
+        
+        Animales ejecutarAnimales = new Animales();
+        
+        do
+        {
+            
+            opcion = ejecutarAnimales.leerEntero("1. Mamifero" + '\n' + "2. Reptil" + '\n' + "3. Aves" + '\n' + "4. Salir");
+            
+            if(opcion == 1)
+            {
+                JOptionPane.showMessageDialog(null,"Procesando datos del mamifero");
+                Mamifero manejadorAnim = new Mamifero();
+                
+                manejadorAnim = manejadorAnim.ingDatMam();
+                
+                manejadorAnim.impMam();
+            }
+            if(opcion == 2)
+            {
+                JOptionPane.showMessageDialog(null,"Procesando datos del reptil");
+                Reptil manejadorAnim = new Reptil();
+                
+                manejadorAnim = manejadorAnim.ingDatRep();
+                
+                manejadorAnim.impRep();
+            }
+            if(opcion == 3)
+            {
+                JOptionPane.showMessageDialog(null,"Procesando datos del ave");
+                Aves manejadorAnim = new Aves();
+                
+                manejadorAnim = manejadorAnim.ingDatAve();
+                
+                manejadorAnim.impAve();
+            }
+            
+        }while(opcion < 4);
+        
+    }
+}
