@@ -1,0 +1,54 @@
+package area;
+
+import javax.swing.JOptionPane;
+
+public class obj {
+
+    protected double aEsf;
+    protected double vEsf;
+    protected double r;
+    
+    public obj() {}
+
+    public double getaEsf() {
+        return aEsf;
+    }
+
+    public void setaEsf(int aEsf) {
+        this.aEsf = aEsf;
+    }
+
+    public double getvEsf() {
+        return vEsf;
+    }
+
+    public void setvEsf(int vEsf) {
+        this.vEsf = vEsf;
+    }
+
+    public double getR() {
+        return r;
+    }
+
+    public void setR(int r) {
+        this.r = r;
+    }
+    
+    public double calcularArea(){
+  
+        r = Double.parseDouble(JOptionPane.showInputDialog("Ingrese radio"));
+        
+        aEsf = Math.PI * Math.pow(r,2);
+        
+        return(aEsf);
+    }
+    
+    public double calcularVolumen(){
+        
+        r = Double.parseDouble(JOptionPane.showInputDialog("Ingrese radio"));
+        
+        vEsf = 4 * Math.PI * Math.pow(r, 3) / 3;
+        
+        return(vEsf);
+    }
+}
