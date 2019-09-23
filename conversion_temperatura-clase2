@@ -1,0 +1,34 @@
+package temperatura;
+
+import javax.swing.JOptionPane;
+
+public class gradosF implements Itemp{
+
+    //ºF = ºC x 1.8 + 32.
+    
+    float grad, gradF;
+    
+    public void temperatura() {
+        
+        grad = Float.parseFloat(JOptionPane.showInputDialog("Grados Centigrados a Fahrenheit: "));
+        
+        gradF = (float) (grad * 1.8 + 32);
+        
+        JOptionPane.showMessageDialog(null, "Grados Fahrenheit: " + gradF);
+        
+    }
+
+    @Override
+    public void temperatura2() {
+        
+        //ºF = 1.8(K – 273.15) + 32
+        
+        grad = Float.parseFloat(JOptionPane.showInputDialog("Grados Kelvin a Fahrenheit: "));
+        
+        gradF = (float) ((grad - 273.15) *  1.8 + 32);
+        
+        JOptionPane.showMessageDialog(null, "Grados Fahrenheit: " + gradF);
+        
+    }
+    
+}
