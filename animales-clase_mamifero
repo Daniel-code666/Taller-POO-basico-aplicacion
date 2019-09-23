@@ -2,90 +2,92 @@ package animales;
 
 import javax.swing.JOptionPane;
 
-final class Aves extends Animales{
+
+final class Mamifero extends Animales{
     
-    String despl;
-    String pico;
-    String plumas;
+    String temp;
+    String respiracion;
+    String osea;
     
-    public Aves(){}
+    public Mamifero(){}
     
-    public Aves(String nombre, String numPatas, String comida, String lugar,
-    String tipo, String despl, String pico, String plumas){
+    public Mamifero(String nombre, String numPatas, String comida, String lugar,
+    String tipo, String temp, String respiracion, String osea){
         
         super(nombre, numPatas, comida, lugar, tipo);
         
-        this.despl = despl;
-        this.pico = pico;
-        this.plumas = plumas;
+        this.temp = temp;
+        this.respiracion = respiracion;
+        this.osea = osea;
+        
     }
 
-    public String getDespl() {
-        return despl;
+    public String getTemp() {
+        return temp;
     }
 
-    public void setDespl(String despl) {
-        this.despl = despl;
+    public void setTemp(String temp) {
+        this.temp = temp;
     }
 
-    public String getPico() {
-        return pico;
+    public String getRespiracion() {
+        return respiracion;
     }
 
-    public void setPico(String pico) {
-        this.pico = pico;
+    public void setRespiracion(String respiracion) {
+        this.respiracion = respiracion;
     }
 
-    public String getPlumas() {
-        return plumas;
+    public String getOsea() {
+        return osea;
     }
 
-    public void setPlumas(String plumas) {
-        this.plumas = plumas;
+    public void setOsea(String osea) {
+        this.osea = osea;
     }
     
-    public Aves ingDatAve(){
+    public Mamifero ingDatMam(){
         
-        Aves nuevoAve = new Aves();
+        Mamifero nuevoMam = new Mamifero();
         String nombre = "";
         String numPatas = "";
         String comida = "";
+        String lugar = "";
         String tipo = "";
-        String despl = "";
-        String pico = "";
-        String plumas = "";
+        String temp = "";
+        String respiracion = "";
+        String osea = "";
         
         nombre = leerCadena("Ingrese nombre animal: ");
         numPatas = leerCadena("¿Cuántas patas? ");
         comida = leerCadena("Tipo de nutrición (carnívoro, herbívoro, omnívoro) ");
-        tipo = leerCadena("Tipo de animal (bipedo, cuadrupedo)");
-        despl = leerCadena("Tipo de desplazamiento ");
-        pico = leerCadena("Tipo de pico ");
-        plumas = leerCadena("Tipo de plumas ");
+        tipo = leerCadena("Tipo de animal (bipedo, cuadrupedo)" );
+        temp = leerCadena("Tipo de sangre ");
+        respiracion = leerCadena("Tipo de respiracion ");
+        osea = leerCadena("Estructura osea ");
         
-        nuevoAve.setNombre(nombre);
-        nuevoAve.setNumPatas(numPatas);
-        nuevoAve.setComida(comida);
-        nuevoAve.setTipo(tipo);
-        nuevoAve.setDespl(despl);
-        nuevoAve.setPico(pico);
-        nuevoAve.setPlumas(plumas);
+        nuevoMam.setNombre(nombre);
+        nuevoMam.setNumPatas(numPatas);
+        nuevoMam.setComida(comida);
+        nuevoMam.setTipo(tipo);
+        nuevoMam.setTemp(temp);
+        nuevoMam.setRespiracion(respiracion);
+        nuevoMam.setOsea(osea);
         
-        return(nuevoAve);
-        
+        return(nuevoMam);
     }
     
-    public void impAve(){
+    public void impMam(){
         
         impDatAnim();
         
         JOptionPane.showMessageDialog(null, "El animal " + nombre + " es un animal " + tipo);
         
-        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene un deplazamiento " + despl);
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene un tipo de sangre " + temp);
         
-        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene un pico tipo " + pico);
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene un tipo de respiración " + respiracion);
         
-        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene unas plumas tipo " + plumas);
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene una estructura osea " + osea);
         
     }
     
