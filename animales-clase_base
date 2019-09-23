@@ -1,0 +1,118 @@
+package animales;
+import javax.swing.JOptionPane;
+
+public class Animales {
+    
+    String nombre;
+    String numPatas; 
+    String comida;
+    String lugar;
+    String tipo;
+    
+    public Animales(){}
+    
+    public Animales(String nombre, String numPatas, String comida, String lugar, String tipo){
+        
+        this.nombre = nombre;
+        this.numPatas = numPatas; 
+        this.comida = comida;
+        this.lugar = lugar;
+        this.tipo = tipo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNumPatas() {
+        return numPatas;
+    }
+
+    public void setNumPatas(String numPatas) {
+        this.numPatas = numPatas;
+    }   
+
+    public String getComida() {
+        return comida;
+    }
+
+    public void setComida(String comida) {
+        this.comida = comida;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+    
+    
+    public void impDatAnim(){
+        
+        String datAnim = "";
+        datAnim = "Nombre: " + nombre + '\n'
+        + "Número de patas: " + numPatas + '\n' +
+        "Tipo de nutrición: " + comida;
+        JOptionPane.showMessageDialog(null, datAnim);
+        defComida(comida);
+        
+    }
+    
+    public void defComida(String comida){
+        
+        String alimento = "";
+        
+        if(comida.equalsIgnoreCase("Carnivoro"))
+        {
+            alimento = "carne";
+            JOptionPane.showMessageDialog(null, "El animal: " + nombre + " Comida preferida: " + alimento);
+        }
+        if(comida.equalsIgnoreCase("Herbivoro"))
+        {
+            alimento = "plantas";
+            JOptionPane.showMessageDialog(null, "El animal: " + nombre + " Comida preferida: plantas" + alimento);
+        }
+        if(comida.equalsIgnoreCase("Omnivoro"))
+        {
+            alimento = "plantas, carne, insectos y otros animales";
+            JOptionPane.showMessageDialog(null, "El animal: " + nombre + " Comida preferida: " + alimento);
+        }
+    }
+    
+    public int leerEntero (String mensaje)
+    {
+        int valor = 0;
+        try
+        {
+            valor = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje));
+            return (valor);
+        }
+        catch (Exception errorIngreso)
+        {
+            errorIngreso.printStackTrace();
+            return (0);
+        }
+    }
+    
+    public String leerCadena (String mjs)
+    {
+        String valor = "";
+        valor = JOptionPane.showInputDialog(null,mjs);
+        return (valor);
+    }
+}
