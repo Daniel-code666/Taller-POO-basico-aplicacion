@@ -1,0 +1,103 @@
+package tiquetes;
+
+import javax.swing.JOptionPane;
+
+public class obj {
+    
+    protected int viaje;
+    protected String fecha;
+    protected int hora;
+    protected String nombre;
+    protected int costo;
+    protected int costoT;
+    protected int tiquetes;
+    
+    public obj(){}
+
+    public int getViaje() {
+        return viaje;
+    }
+
+    public void setViaje(int viaje) {
+        this.viaje = viaje;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getHora() {
+        return hora;
+    }
+
+    public void setHora(int hora) {
+        this.hora = hora;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public int getCostoT() {
+        return costoT;
+    }
+
+    public void setCostoT(int costoT) {
+        this.costoT = costoT;
+    }
+
+    public int getTiquetes() {
+        return tiquetes;
+    }
+
+    public void setTiquetes(int tiquetes) {
+        this.tiquetes = tiquetes;
+    }
+    
+    
+    
+    public void reg(){
+        
+        nombre = JOptionPane.showInputDialog("Ingrese Nombre: ");
+        
+        tiquetes = 1;
+        
+        while(tiquetes < 4)
+        {
+            viaje = Integer.parseInt(JOptionPane.showInputDialog("Ingrese número de viaje del tiquete" + tiquetes + ": "));
+
+            hora = Integer.parseInt(JOptionPane.showInputDialog("Ingrese hora del tiquete" + tiquetes + ": "));
+
+            fecha = JOptionPane.showInputDialog("Ingrese fecha del tiquete" + tiquetes + ": ");
+            
+            costo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese valor del tiquete" + tiquetes + ": "));
+            
+            tiquetes++;
+        }
+        
+    }
+    
+    public int total(){
+        
+        costoT = costo * tiquetes;
+        
+        return(costoT);
+    }
+    
+}
