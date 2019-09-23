@@ -1,0 +1,33 @@
+package temperatura;
+
+import javax.swing.JOptionPane;
+
+public class gradosK implements Itemp{
+
+    //K = ºC + 273.15.
+    
+    float grad, gradK;
+    
+    public void temperatura() {
+        
+        grad = Float.parseFloat(JOptionPane.showInputDialog("Grados Centigrados a Kelvin: "));
+        
+        gradK = (float) (grad + 273.15);
+        
+        JOptionPane.showMessageDialog(null, "Grados Kelvin: " + gradK);
+        
+    }
+    
+    //K = 5/9 (ºF – 32) + 273.15
+    
+    public void temperatura2(){
+
+        grad = Float.parseFloat(JOptionPane.showInputDialog("Grados Fahrenheit a Kelvin: "));
+        
+        gradK = (float) ((grad - 32) * 5/9 + 273.15);
+        
+        JOptionPane.showMessageDialog(null, "Grados Kelvin: " + gradK);
+        
+    }
+    
+}
