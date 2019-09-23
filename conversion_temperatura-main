@@ -1,0 +1,68 @@
+package temperatura;
+
+import javax.swing.JOptionPane;
+
+public class temperatura {
+
+    public static void main(String[] args) {
+        
+        temperatura t1 = new temperatura();
+        menu();
+
+    }
+   
+    public static void menu(){
+        
+        int option;
+        
+        boolean exit = false;
+        
+        while(!exit)
+        {
+            option = Integer.parseInt(JOptionPane.showInputDialog("1. Grados Centigrados a Fahrenheit y Kelvin" + '\n' + "2. Grados Fahrenheit a Centigrados y Kelvin"
+            + '\n' + "3. Grados Kelvin a Centigrados y Fahrenheit" + '\n' + "4 Salir"));
+            
+            switch(option)
+            {
+                
+                case 1:
+                    gradosF f = new gradosF();
+                    gradosK k = new gradosK();
+                    mostrarGrad(f);
+                    mostrarGrad(k);
+                    break;
+                case 2:
+                    gradosC c = new gradosC();
+                    gradosK k1 = new gradosK();
+                    mostrarGrad(c);
+                    mostrarGrad2(k1);
+                    break; 
+                case 3:
+                    gradosC c1 = new gradosC();
+                    gradosF f1 = new gradosF();
+                    mostrarGrad2(c1);
+                    mostrarGrad2(f1);
+                    break;
+                case 4:
+                    exit = true;
+                    break; 
+                default:
+                    JOptionPane.showMessageDialog(null, "Opción digitada no existe");
+            }
+        }
+        
+    }
+    
+    public static void mostrarGrad(Itemp grad){
+        
+        grad.temperatura();
+        
+    }
+    
+    public static void mostrarGrad2(Itemp grad2){
+        
+        grad2.temperatura2();
+        
+    }
+    
+}
