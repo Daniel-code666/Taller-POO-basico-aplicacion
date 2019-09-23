@@ -1,0 +1,92 @@
+package animales;
+
+import javax.swing.JOptionPane;
+
+final class Aves extends Animales{
+    
+    String despl;
+    String pico;
+    String plumas;
+    
+    public Aves(){}
+    
+    public Aves(String nombre, String numPatas, String comida, String lugar,
+    String tipo, String despl, String pico, String plumas){
+        
+        super(nombre, numPatas, comida, lugar, tipo);
+        
+        this.despl = despl;
+        this.pico = pico;
+        this.plumas = plumas;
+    }
+
+    public String getDespl() {
+        return despl;
+    }
+
+    public void setDespl(String despl) {
+        this.despl = despl;
+    }
+
+    public String getPico() {
+        return pico;
+    }
+
+    public void setPico(String pico) {
+        this.pico = pico;
+    }
+
+    public String getPlumas() {
+        return plumas;
+    }
+
+    public void setPlumas(String plumas) {
+        this.plumas = plumas;
+    }
+    
+    public Aves ingDatAve(){
+        
+        Aves nuevoAve = new Aves();
+        String nombre = "";
+        String numPatas = "";
+        String comida = "";
+        String tipo = "";
+        String despl = "";
+        String pico = "";
+        String plumas = "";
+        
+        nombre = leerCadena("Ingrese nombre animal: ");
+        numPatas = leerCadena("¿Cuántas patas? ");
+        comida = leerCadena("Tipo de nutrición (carnívoro, herbívoro, omnívoro) ");
+        tipo = leerCadena("Tipo de animal (bipedo, cuadrupedo)");
+        despl = leerCadena("Tipo de desplazamiento ");
+        pico = leerCadena("Tipo de pico ");
+        plumas = leerCadena("Tipo de plumas ");
+        
+        nuevoAve.setNombre(nombre);
+        nuevoAve.setNumPatas(numPatas);
+        nuevoAve.setComida(comida);
+        nuevoAve.setTipo(tipo);
+        nuevoAve.setDespl(despl);
+        nuevoAve.setPico(pico);
+        nuevoAve.setPlumas(plumas);
+        
+        return(nuevoAve);
+        
+    }
+    
+    public void impAve(){
+        
+        impDatAnim();
+        
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " es un animal " + tipo);
+        
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene un deplazamiento " + despl);
+        
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene un pico tipo " + pico);
+        
+        JOptionPane.showMessageDialog(null, "El animal " + nombre + " tiene unas plumas tipo " + plumas);
+        
+    }
+    
+}
